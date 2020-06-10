@@ -1,0 +1,18 @@
+<h1 style="padding-left:5%"><b>Le nostre camere</b></h1>
+<br>
+<div *ngFor="let stanza of stanze" style="padding-bottom: 0%" >
+    <div class="container">
+    <div class="shadow p-3 mb-5 bg-light rounded" style="height: 130px;">
+        <div class="row">
+            <div class="col">
+                <figure><a routerLink="/detail/{{stanza['id']}}"><img [src]="stanza['src']" [id]="stanza['tipo']" style="height: 110px; width: 100%;"></a></figure>
+            </div>
+            <div class="col" >
+                <h4>Stanza {{stanza["tipo"]}}</h4>
+                <p style="font-size: small;">A partire da: <b>{{stanza["prezzo"]}} €</b></p>
+                <ngb-rating [rate]="stanza['rate']" ></ngb-rating>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

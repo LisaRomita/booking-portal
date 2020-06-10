@@ -1,0 +1,59 @@
+<div class="container" style="padding-bottom:30%;" >
+  <div class="shadow p-3 mb-5 bg-light rounded">
+    <h1><b>Cosa stai cercando?</b></h1><br>
+    <form (ngSubmit)="onSubmit()" #myFormP = "ngForm">
+      <div class="form-group">
+        <label for="arrivo">Arrivo il giorno:</label>
+        <input type="date" class="form-control form-control-lg" id="arrivo" required [(ngModel)]="arrivo" name="arrivo" >
+      </div>
+      <div class="form-group">
+        <label for="partenza">Parto il giorno:</label>
+        <input type="date" class="form-control form-control-lg" id="partenza" required [(ngModel)]="partenza" name="partenza" >
+      </div>
+      <div class="form-group">
+        <label for="partenza">Adulti:</label>
+          <select class="form-control form-control-lg" id="adulti" required [(ngModel)]="adulti" name="adulti">
+              <option [value]="1">1 adulto</option>
+              <option [value]="2">2 adulti</option>
+              <option [value]="3">3 adulti</option>
+              <option [value]="4">4 adulti</option>
+          </select>
+      </div>
+      <div class="form-group">
+        <label for="partenza">Bambini:</label>
+          <select class="form-control form-control-lg" id="bambini" [(ngModel)]="bambini" name="bambini">Bambini
+              <option [value]="1">1 bambino</option>
+              <option [value]="2">2 bambini</option>
+              <option [value]="3">3 bambini</option>
+              <option [value]="4">4 bambini</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="partenza">Stanze:</label>
+          <select class="form-control form-control-lg" id="stanze" [(ngModel)]="stanze" name="stanze">Stanze
+            <option [value]="1">1 stanza</option>
+            <option [value]="2">2 stanze</option>
+            <option [value]="3">3 stanze</option>
+            <option [value]="4">4 stanze</option>
+        </select>
+      </div>
+      <br>
+      <button  type="submit" id="button4" class="btn btn-success btn-lg" [disabled]="!myFormP.form.valid" (click) = "submitted = true">Cerca</button> <!--it will trigger a form submit because of its type (type="submit")-->
+
+    </form>
+
+    <div *ngIf="submitted" id="tot">
+        <h2>A partire da {{ totale }} €!</h2>
+    </div>
+  </div>
+</div>
+<h1>Servizi</h1>
+<ul>
+    <li>Accessibile disabili</li>
+    <li>Reception 24h</li>
+    <li>Prima colazione</li>
+    <li>Internet Wi-fi (a pagamento)</li>
+    <li>Informazioni turistiche</li>
+    <li>Telefonate VOIP</li>
+    <li>Parcheggio (secondo disponibilità – a pagamento)</li>
+</ul>
