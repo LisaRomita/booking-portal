@@ -9,7 +9,7 @@
     "test:watch": "jest --watch",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "cypress:open" : "$(npm bin)/cypress open "
+    "cypress:open": "$(npm bin)/cypress open "
   },
   "private": true,
   "dependencies": {
@@ -24,6 +24,7 @@
     "@angular/router": "~9.1.6",
     "@ng-bootstrap/ng-bootstrap": "^6.1.0",
     "bootstrap": "^4.5.0",
+    "git": "^0.1.5",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
