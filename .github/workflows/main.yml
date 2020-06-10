@@ -24,7 +24,10 @@ jobs:
       - name: npm install and npm run build
         run: |
           npm i -f
-          npm run build:prod
+          npm run build
+      - name: Jest tests
+        run: |
+          npx jest
       - name: Push Build to Releases
         uses: ncipollo/release-action@v1
         with:
