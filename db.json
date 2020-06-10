@@ -1,0 +1,184 @@
+{
+  "stanze": [
+    {
+      "id": 1,
+      "tipo": "singola",
+      "prezzo": 50,
+      "rate": 3,
+      "src": "https://www.bwcityhotel-ge.it/resources/images/7eda536e-8b53-4208-8ca9-60cd7c00f204/it/B/camera-singola-nel-centro-di-genova.jpg"
+    },
+    {
+      "id": 2,
+      "tipo": "matrimoniale",
+      "prezzo": 90,
+      "rate": 5,
+      "src": "https://www.hotelserapo.com/sites/hotelserapo.gisnet.it/files/Hotel_Serapo_Classic_Superior_t01.jpg"
+    },
+    {
+      "id": 3,
+      "tipo": "doppia",
+      "prezzo": 70,
+      "rate": 2,
+      "src": "http://www.hotelgravinasanpietro.it/wp-content/uploads/2013/12/doppia_big.jpg"
+    },
+    {
+      "id": 4,
+      "tipo": "singola premium",
+      "prezzo": 80,
+      "rate": 5,
+      "src": "https://www.hoteldeipittori.it/wp-content/uploads/2016/10/Felice-Casorati-2-1.jpg"
+    },
+    {
+      "id": 5,
+      "tipo": "suite",
+      "prezzo": 100,
+      "rate": 5,
+      "src": "https://d1vp8nomjxwyf1.cloudfront.net/wp-content/uploads/sites/57/2016/03/05133652/Hotel-Royal-web-01Corrige.jpg"
+    },
+    {
+      "id": 6,
+      "tipo": "tripla",
+      "prezzo": 70,
+      "rate": 3,
+      "src": "https://media-cdn.tripadvisor.com/media/photo-s/12/4f/97/75/hotel-il-giardino.jpg"
+    },
+    {
+      "id": 7,
+      "tipo": "family",
+      "prezzo": 150,
+      "rate": 5,
+      "src": "https://www.hotelilaria.com/images/rooms/gallery/superior/hotel-ilaria-lucca-superior-07.jpg"
+    }
+  ],
+  "utenti": [
+    {
+      "id": "mrossi",
+      "nome": "mario",
+      "cognome": "rossi",
+      "password": "mrossi",
+      "email": "m.rossi@email.com"
+    },
+    {
+      "id": "fbianchi",
+      "nome": "fabio",
+      "cognome": "bianchi",
+      "password": "fbianchi",
+      "email": "f.bianchi@email.com"
+    },
+    {
+      "id": "fverdi",
+      "nome": "francesco",
+      "cognome": "verdi",
+      "password": "fverdi",
+      "email": "fverdi@email.com"
+    },
+    {
+      "nome": "davide",
+      "cognome": "gialli",
+      "email": "dgialli@email.com",
+      "id": "dgialli",
+      "password": "a"
+    },
+    {
+      "nome": "lisa",
+      "cognome": "romita",
+      "email": "ciao@email.com",
+      "id": "lromita",
+      "password": "ciao"
+    },
+    {
+      "nome": "lisa",
+      "cognome": "romita",
+      "email": "lisa",
+      "id": "lrom",
+      "password": "lisa"
+    },
+    {
+      "nome": "mario",
+      "cognome": "rossi",
+      "email": "prova",
+      "id": "mariorossi",
+      "password": "ciao"
+    },
+    {
+      "nome": "ciao",
+      "cognome": "pop",
+      "email": "prova",
+      "id": "ciao",
+      "password": "1"
+    },
+    {
+      "nome": "lisa",
+      "cognome": "lisa",
+      "email": "lisa",
+      "id": "lisa",
+      "password": "lisa"
+    },
+    {
+      "nome": "ste",
+      "cognome": "ste",
+      "email": "ste",
+      "id": "ste",
+      "password": "ste"
+    },
+    {
+      "nome": "nome",
+      "cognome": "cognome",
+      "email": "email@email.it",
+      "id": "prova1",
+      "password": "psw"
+    },
+    {
+      "nome": "ciao",
+      "cognome": "fsad",
+      "email": "fsa",
+      "id": "c",
+      "password": "1"
+    },
+    {
+      "nome": "ciao",
+      "cognome": "fsad",
+      "email": "prova",
+      "id": "lisa2",
+      "password": "1"
+    }
+  ],
+  "messaggi": [
+    {
+      "id": 0,
+      "mail": "prova",
+      "txt": "prova"
+    },
+    {
+      "id": 1,
+      "email": "prova2",
+      "txt": "prova2\n"
+    }
+  ],
+  "prenotazioni": [
+    {
+      "id": 0,
+      "nome": "",
+      "cognome": "",
+      "email": "",
+      "arrivo": "",
+      "partenza": "",
+      "adulti": "",
+      "bambini": "",
+      "stanze": "",
+      "tipo": ""
+    },
+    {
+      "id": 1,
+      "nome": "ciao",
+      "cognome": "ciao",
+      "email": "prova",
+      "arrivo": "2020-05-08",
+      "partenza": "2020-05-09",
+      "adulti": 1,
+      "bambini": 0,
+      "stanze": 1,
+      "tipologia": 1
+    }
+  ]
+}
