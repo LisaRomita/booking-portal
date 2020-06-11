@@ -28,9 +28,13 @@ jobs:
       - name: Jest tests
         run: |
           npx jest
+      - name: Cypress tests
+        run: |
+          npm i cypress --save-dev
+          npx cypress run
       - name: Push Build to Releases
-        uses: ncipollo/release-action@v1
+        uses: ncipollo/release-action@v2
         with:
-          tag: v1.0
+          tag: v2.0
           artifacts: "dist/booking-portal/*"
           token: ${{ secrets.TOKEN }}
