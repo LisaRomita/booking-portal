@@ -15,7 +15,7 @@ context('Login', () => {
         .type('mrossi').should('have.value', 'mrossi')
         cy.wait(500)
         cy.get('#button2').click()
-        cy.wait(500)
+        cy.wait(1000)
         cy.url().should('eq', 'http://localhost:4200/dashboard')
         cy.get('h1').should('contain', 'mrossi')
 

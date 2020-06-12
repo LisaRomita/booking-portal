@@ -17,6 +17,7 @@ context('Logout', () => {
         cy.get('#button2').click()
         cy.wait(500)
         cy.url().should('be', 'http://localhost:4200/dashboard')
+        cy.wait(500)
         cy.get('h1').should('contain', 'mrossi')
         cy.wait(500)
         cy.get('.navbar-nav')
