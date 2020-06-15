@@ -1,24 +1,49 @@
-<nav class="navbar navbar-expand-lg mb-3" role="navigation">
-  <img
-    width="40"
-    alt="Angular Logo"
-    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
-  />
-  <span style="font-size: 150%;">PANORAMIC HOTEL</span>
+<!--<nav class="navbar navbar-expand-lg mb-3">
+  <a class="navbar-brand" style="align-items: center;">PANORAMIC HOTEL</a>
     <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
       &#9776;
     </button>
+
     <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse justify-content-end">
     <ul ngbNav class="navbar-nav" [activeId]="route.fragment">
-        <li ngbNavItem="dashboard" class="nav-item navbar-brand mx-auto">
-    <a ngbNavLink routerLink="/dashboard" class="nav-link" (click)="isMenuCollapsed = true">Home</a></li>
-    <li ngbNavItem="login" *ngIf="logged == false" class="nav-item navbar-brand mx-auto">
-    <a ngbNavLink routerLink="/login"  class="nav-link" (click)="isMenuCollapsed = true">Login</a></li>
-    <li ngbNavItem="logout" *ngIf="logged == true" class="nav-item navbar-brand mx-auto">
-      <a ngbNavLink routerLink="/logout"  class="nav-link" id="esci" (click)="isMenuCollapsed = true">Logout</a></li>
-    <li ngbNavItem="contact" class="nav-item navbar-brand mx-auto">
-    <a ngbNavLink routerLink="/contact"  class="nav-link" (click)="isMenuCollapsed = true">Contattaci</a></li>
-  </ul>
-</div>
+      <li ngbNavItem="dashboard" class="nav-item navbar-brand mx-auto">
+        <a ngbNavLink routerLink="/dashboard" class="nav-link" (click)="isMenuCollapsed = true">Home</a>
+      </li>
+      <li ngbNavItem="login" *ngIf="logged == false" class="nav-item navbar-brand mx-auto">
+        <a ngbNavLink routerLink="/login"  class="nav-link" (click)="isMenuCollapsed = true">Login</a>
+      </li>
+      <li ngbNavItem="logout" *ngIf="logged == true" class="nav-item navbar-brand mx-auto">
+        <a ngbNavLink routerLink="/logout"  class="nav-link" id="esci" (click)="isMenuCollapsed = true">Logout</a>
+      </li>
+      <li ngbNavItem="contact" class="nav-item navbar-brand mx-auto">
+        <a ngbNavLink routerLink="/contact"  class="nav-link" (click)="isMenuCollapsed = true">Contattaci</a>
+      </li>
+    </ul>
+    </div>
+</nav>-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#" style="padding-top: 1%; font-size: medium;"><b>PANORAMIC HOTEL</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02" >
+    <ul ngbNav class="navbar-nav" [activeId]="route.fragment" >
+      <li ngbNavItem="dashboard" class="nav-item navbar-brand mx-auto" style="font-size: medium;">
+        <a ngbNavLink routerLink="/dashboard" class="nav-link" (click)="isMenuCollapsed = true"><b>Home</b></a>
+      </li>
+      <li ngbNavItem="login" *ngIf="logged == false" class="nav-item navbar-brand mx-auto" style="font-size: medium;">
+        <a ngbNavLink routerLink="/login"  class="nav-link" (click)="isMenuCollapsed = true"><b>Login</b></a>
+      </li>
+      <li ngbNavItem="logout" *ngIf="logged == true" class="nav-item navbar-brand mx-auto" style="font-size: medium;">
+        <a ngbNavLink routerLink="/logout"  class="nav-link" id="esci" (click)="isMenuCollapsed = true"><b>Logout</b></a>
+      </li>
+      <li ngbNavItem="contact" class="nav-item navbar-brand mx-auto" style="font-size: medium;">
+        <a ngbNavLink routerLink="/contact"  class="nav-link" (click)="isMenuCollapsed = true"><b>Contattaci</b></a>
+      </li>
+    </ul>
+  </div>
 </nav>
+
 <router-outlet></router-outlet>
