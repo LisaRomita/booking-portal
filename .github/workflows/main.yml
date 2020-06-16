@@ -37,6 +37,14 @@ jobs:
       - name: Push Build to Releases
         uses: ncipollo/release-action@v1
         with:
-          tag: v2.1
+          tag: v2.2
           artifacts: "dist/booking-portal/*"
           token: ${{ secrets.TOKEN }}
+      - name: Deployment
+        uses: AhsanAyaz/angular-deploy-gh-pages-actions
+        with:
+          github_access_token: ${{ secrets.TOKEN }} 
+          build_configuration: staging 
+          base_href: /booking-portal/   
+          deploy_branch: gh-pages 
+          build_folder: dist/my-project 
