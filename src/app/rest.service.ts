@@ -12,10 +12,10 @@ import { Prenotazioni } from './prenotazioni';
 })
 export class RestService {
 
-  url: string = "http://localhost:3000/stanze/";
-  urlUtenti: string = "http://localhost:3000/utenti/";
-  urlMess: string = "http://localhost:3000/messaggi";
-  urlPrenotazioni: string = "http://localhost:3000/prenotazioni";
+  url: string = "https://my-json-server.typicode.com/lisaromita/booking-portal/stanze/";
+  urlUtenti: string = "https://my-json-server.typicode.com/lisaromita/booking-portal/utenti/";
+  urlMess: string = "https://my-json-server.typicode.com/lisaromita/booking-portal/messaggi";
+  urlPrenotazioni: string = "https://my-json-server.typicode.com/lisaromita/booking-portal/prenotazioni";
 
   currentUser: Utenti;
 
