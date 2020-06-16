@@ -37,6 +37,6 @@ jobs:
       - name: Push Build to Releases
         uses: ncipollo/release-action@v1
         with:
-          tag: v2.0
+          tag: v2.1
           artifacts: "dist/booking-portal/*"
           token: ${{ secrets.TOKEN }}
