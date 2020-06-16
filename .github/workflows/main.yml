@@ -34,12 +34,12 @@ jobs:
           build: npm run build
           start: npm start
           wait-on: http://localhost:4200
-      - name: Push Build to Releases
-        uses: ncipollo/release-action@v1
-        with:
-          tag: v2.3
-          artifacts: "dist/booking-portal/*"
-          token: ${{ secrets.TOKEN }}
+    #  - name: Push Build to Releases
+    #    uses: ncipollo/release-action@v1
+    #    with:
+    #      tag: v2.3
+    #      artifacts: "dist/booking-portal/*"
+    #      token: ${{ secrets.TOKEN }}
       - name: Build
         run: |
          npm install -g @angular/cli
