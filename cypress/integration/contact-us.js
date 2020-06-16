@@ -23,7 +23,7 @@ context('ContactUs', () => {
         .type('Remember, be nice!')
         cy.get('#form1').submit()
         cy.get("#div1").should('contain', 'Grazie, risponderemo il prima possibile')
-        cy.get('#a1').click({force = true})
+        cy.get('#a1').click({force: true})
         cy.url().should('be', 'http://localhost:4200/dashboard')
     })
     
