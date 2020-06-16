@@ -18,6 +18,7 @@ context('Registrati', () => {
         .type('psw').should('have.value', 'psw')
         cy.get('#conferma')
         .type('psw').should('have.value', 'psw')
+        cy.wait(500)
         cy.get('#button3').click()
         cy.get('h1').should('contain', 'Registrazione riuscita')
     })
