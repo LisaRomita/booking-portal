@@ -40,11 +40,15 @@ jobs:
           tag: v2.2
           artifacts: "dist/booking-portal/*"
           token: ${{ secrets.TOKEN }}
-      - name: Deployment
-        uses: AhsanAyaz/angular-deploy-gh-pages-actions
-        with:
-          github_access_token: ${{ secrets.TOKEN }} 
-          build_configuration: staging 
-          base_href: /booking-portal/   
-          deploy_branch: gh-pages 
-          build_folder: dist/my-project 
+      - name: Build
+      run: |
+         npm install -g @angular/cli
+         npm install
+         ng build --prod --output-path docs --base-href="/booking-portal/"
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v2
+        env:
+          ACCESS_TOKEN: ${{ secrets.TOKEN }}
+          BASE_BRANCH: master
+          BRANCH: gh-pages
+          FOLDER: dist/booking-portal
