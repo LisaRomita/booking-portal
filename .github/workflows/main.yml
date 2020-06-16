@@ -27,7 +27,7 @@ jobs:
           npm run build
       - name: install and watch json server
         run: |
-          npm install -j json-server
+          npm install -g json-server
           json-server --watch db.json
       - name: Jest tests
         run: |
