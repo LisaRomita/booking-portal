@@ -28,12 +28,12 @@ jobs:
       - name: Jest tests
         run: |
           npx jest
-      - name: Cypress tests
-        uses: cypress-io/github-action@v1
-        with:
-          build: npm run build
-          start: npm start
-          wait-on: http://localhost:4200
+     # - name: Cypress tests
+     #   uses: cypress-io/github-action@v1
+     #   with:
+     #     build: npm run build
+     #     start: npm start
+     #     wait-on: http://localhost:4200
       - name: Push Build to Releases
         uses: ncipollo/release-action@v1
         with:
