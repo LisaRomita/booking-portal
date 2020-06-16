@@ -22,7 +22,6 @@ export class AppComponent implements AfterViewChecked{
   logout: LogoutComponent;
 
   logged = false;
-  public isMenuCollapsed = true;
 
   constructor(public route: ActivatedRoute, public rs: RestService) {
     

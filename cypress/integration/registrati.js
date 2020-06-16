@@ -11,7 +11,7 @@ context('Registrati', () => {
         cy.get('#cognome')
         .type('cognome').should('have.value', 'cognome')
         cy.get('#user')
-        .type('prova2').should('have.value', 'prova2')
+        .type('prova4').should('have.value', 'prova4')
         cy.get('#email')
         .type('email@email.it').should('have.value', 'email@email.it')
         cy.get('#password')

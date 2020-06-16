@@ -36,10 +36,6 @@
     font-size: medium;
     padding-top: 5%;
   }
-  
-  .form-control {
-    width: 50%;
-  }
 
   button {
       background-color: #1976d2;
@@ -73,9 +69,6 @@
   }
 */
 
-.navbar {
-  padding: 0.5rem 13rem;
-}
   
   .toolbar img {
     margin: 0 16px;

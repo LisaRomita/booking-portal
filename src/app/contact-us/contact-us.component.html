@@ -1,12 +1,14 @@
   
 <div class="container">
-    <div [hidden]="submitted" style=" padding-left:33%">
+  <div class="row">
+    <div class="col-sm"></div>
+    <div class="col-sm" [hidden]="submitted" style="text-align: center;">
       <br>
     <h1>Come possiamo aiutarti?</h1>
     <form (ngSubmit)="onSubmit()" #myFormC = "ngForm" id="form1">
       <div class="form-group">
         <label for="mail">Email:</label><br><br>
-        <input type="text" class="form-control" id="email" required [(ngModel)]="mail" name="mail">
+        <input style="text-align: center;" type="text" class="form-control" id="email" required [(ngModel)]="mail" name="mail">
       </div>
       <br>
       <div class="form-group">
@@ -17,11 +19,14 @@
       <button type="submit" class="btn btn-success btn-lg" id="button1" [disabled]="!myFormC.form.valid" (click) = "submitted=true">Invia</button> <!--it will trigger a form submit because of its type (type="submit")-->
 
     </form>
-</div>
+
 <div *ngIf="submitted" style="text-align: center; margin-top:2%; margin-left:25%; width:50%" id="div1" class="shadow p-3 mb-5 bg-white rounded">
     <br>
     <h1>Grazie, risponderemo il prima possibile!</h1>
     <br>
     <a routerLink="/dashboard" id="a1" style="color: white;"><button type="button" class="btn btn-primary btn-lg">Torna alla <b>HOME</b></button></a>
 </div> 
+</div>
+<div class="col-sm"></div>
+</div>
 </div>

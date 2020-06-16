@@ -1,26 +1,33 @@
 
     <br>
-    <div class="container" style="text-align: center; width:30%; padding-top:2%">
-      <div class="shadow p-3 mb-5 bg-white rounded rounded">
-        <form (ngSubmit)="onSubmit()" #myFormL = "ngForm" id="form2">
-          <div class="form-group" style="padding-left:20%; padding-right: 20%;">
-            <h2>Username:</h2><br>
-            <input type="text" class="form-control form-control-lg"  id="email" required [(ngModel)]="user" name="user" (blur)="checkUser()">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm"  style="text-align: center;">
+          <div class="shadow p-3 mb-5 bg-white rounded rounded">
+            <form (ngSubmit)="onSubmit()" #myFormL = "ngForm" id="form2">
+              <div class="form-group" style="padding-left:20%; padding-right: 20%;">
+                <h2>Username:</h2><br>
+                <input type="text" class="form-control form-control-lg"  id="email" required [(ngModel)]="user" name="user" (blur)="checkUser()">
+              </div>
+              <br>
+              <div class="form-group" style="padding-left:20%; padding-right: 20%;">
+                <h2>Password:</h2><br>
+                <input type="password" class="form-control form-control-lg" id="psw" [(ngModel)]="psw" name="psw" required>
+              </div>
+              <br><br>
+              <button type="submit" class="btn btn-success btn-lg" id="button2" [disabled]="!myFormL.form.valid" (click)="onSubmit()"><b>LOGIN</b></button> 
+              <br><br>
+              <div class="alert alert-danger" id="alert" role="alert" *ngIf="!passwordOk" style="color: darkred;"><b>Username e/o password errati!</b></div>
+              <br>
+            </form>
           </div>
-          <br>
-          <div class="form-group" style="padding-left:20%; padding-right: 20%;">
-            <h2>Password:</h2><br>
-            <input type="password" class="form-control form-control-lg" id="psw" [(ngModel)]="psw" name="psw" required>
           </div>
-          <br><br>
-          <button type="submit" class="btn btn-success btn-lg" id="button2" [disabled]="!myFormL.form.valid" (click)="onSubmit()"><b>LOGIN</b></button> 
-          <br><br>
-          <div class="alert alert-danger" id="alert" role="alert" *ngIf="!passwordOk" style="color: darkred;"><b>Username e/o password errati!</b></div>
-          <br>
-        </form>
+          <div class="col-sm"></div>
       </div>
+      
     </div><br>
     <div style="text-align: center;">
       <p><b>Non hai un account?</b></p><br>
-      <a href="/registrati"><button type="button" class="btn btn-primary btn-lg"><b>REGISTRATI</b></button></a>
+      <a routerLink="/registrati"><button type="button" class="btn btn-primary btn-lg"><b>REGISTRATI</b></button></a>
     </div>
