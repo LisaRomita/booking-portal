@@ -47,7 +47,8 @@ jobs:
          ng build --prod --output-path docs --base-href /booking-portal/
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v2
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          ACCESS_TOKEN: ${{ secrets.TOKEN }}
+          BASE_BRANCH: master
           BRANCH: gh-pages
-          FOLDER: dist
+          FOLDER: dist/booking-portal
