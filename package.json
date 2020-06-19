@@ -7,6 +7,7 @@
     "build": "ng build",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "cypress:open": "$(npm bin)/cypress open "
@@ -52,8 +53,9 @@
   },
   "jest": {
     "preset": "jest-preset-angular",
+    "roots": [ "<rootDir>/src/" ],
     "setupTestFrameworkScriptFile": [
-      "<rootDir>/src/test.ts"
+      "<rootDir>/src/setup-jest.ts"
     ]
   }
 }

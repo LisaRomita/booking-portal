@@ -10,6 +10,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 describe('ContactUsComponent', () => {
   let component: ContactUsComponent;
   let fixture: ComponentFixture<ContactUsComponent>;
+  let dom: any;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -22,7 +23,7 @@ describe('ContactUsComponent', () => {
     .then(() => {
       fixture = TestBed.createComponent(ContactUsComponent);
       component = fixture.componentInstance;
-
+      dom = fixture.nativeElement;
       fixture.detectChanges();
     });
   }));
@@ -30,5 +31,14 @@ describe('ContactUsComponent', () => {
 
   test('should create', async() => {
     expect(component).toBeTruthy();
+  });
+
+  test('should have title', async() => {
+    expect(dom.innerHTML).toContain('<h1>Come possiamo aiutarti?</h1>');
+  });
+
+  test('should have email', async() => {
+    component.mail = 'fake@email.com'
+    expect(component.mail).toBe('fake@email.com');
   });
 });

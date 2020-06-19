@@ -27,7 +27,7 @@ jobs:
           npm run build
       - name: Jest tests
         run: |
-          npx jest
+          npm test
       - name: Cypress tests
         uses: cypress-io/github-action@v1
         with:

@@ -19,14 +19,14 @@
       <button type="submit" class="btn btn-success btn-lg" id="button1" [disabled]="!myFormC.form.valid" (click) = "submitted=true">Invia</button> <!--it will trigger a form submit because of its type (type="submit")-->
 
     </form>
-
-<div *ngIf="submitted" style="text-align: center; margin-top:2%; margin-left:25%; width:50%" id="div1" class="shadow p-3 mb-5 bg-white rounded">
+  </div>
+<div *ngIf="submitted" style="text-align: center; margin-top:2%;" id="div1" class="shadow p-3 mb-5 bg-white rounded">
     <br>
     <h1>Grazie, risponderemo il prima possibile!</h1>
     <br>
     <a routerLink="/dashboard" id="a1" style="color: white;"><button type="button" class="btn btn-primary btn-lg">Torna alla <b>HOME</b></button></a>
 </div> 
-</div>
+
 <div class="col-sm"></div>
 </div>
 </div>
