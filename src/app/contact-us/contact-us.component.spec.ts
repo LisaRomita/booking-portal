@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactUsComponent } from './contact-us.component';
+import { Utenti } from '../utenti';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { RestService } from '../rest.service';
 import { FormsModule } from '@angular/forms';
@@ -41,4 +42,5 @@ describe('ContactUsComponent', () => {
     component.mail = 'fake@email.com'
     expect(component.mail).toBe('fake@email.com');
   });
+
 });

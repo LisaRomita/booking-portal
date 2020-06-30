@@ -28,6 +28,7 @@ jobs:
       - name: Jest tests
         run: |
           npm test
+          npm run test:cov
       - name: Cypress tests
         uses: cypress-io/github-action@v1
         with:
