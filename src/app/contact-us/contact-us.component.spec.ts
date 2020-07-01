@@ -37,10 +37,4 @@ describe('ContactUsComponent', () => {
   test('should have title', async() => {
     expect(dom.innerHTML).toContain('<h1>Come possiamo aiutarti?</h1>');
   });
-
-  test('should have email', async() => {
-    component.mail = 'fake@email.com'
-    expect(component.mail).toBe('fake@email.com');
-  });
-
 });
