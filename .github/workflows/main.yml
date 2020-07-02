@@ -21,19 +21,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install and npm run build
-        run: |
-          npm i -f
-          npm run build
       - name: Jest tests
         run: |
           npm test
           npm run test:cov
-      - name: Coverage report
-        uses: romeovs/lcov-reporter-action@v0.2.16
-        with:
-          github-token: ${{ secrets.TOKEN }}
-          lcov-file: ./coverage/lcov.info
       - name: Cypress tests
         uses: cypress-io/github-action@v1
         with:
@@ -46,11 +37,15 @@ jobs:
     #      tag: v2.3
     #      artifacts: "dist/booking-portal/*"
     #      token: ${{ secrets.TOKEN }}
-      - name: Build
+    - name: npm install and npm run build
         run: |
-         npm install -g @angular/cli
-         npm install
-         ng build --prod --output-path docs --base-href /booking-portal/
+          npm i -f
+          ng build --prod --output-path docs --base-href /booking-portal/
+        # - name: Build
+        #   run: |
+        #   npm install -g @angular/cli
+        #   npm install
+        #   ng build --prod --output-path docs --base-href /booking-portal/
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v2
         env:
