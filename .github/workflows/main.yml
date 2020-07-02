@@ -21,6 +21,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: npm install and npm run build
+        run: |
+          npm i -f
+          npm run build
       - name: Jest tests
         run: |
           npm test
@@ -37,15 +41,11 @@ jobs:
     #      tag: v2.3
     #      artifacts: "dist/booking-portal/*"
     #      token: ${{ secrets.TOKEN }}
-    - name: npm install and npm run build
+      - name: Build
         run: |
-          npm i -f
-          ng build --prod --output-path docs --base-href /booking-portal/
-        # - name: Build
-        #   run: |
-        #   npm install -g @angular/cli
-        #   npm install
-        #   ng build --prod --output-path docs --base-href /booking-portal/
+         npm install -g @angular/cli
+         npm install
+         ng build --prod --output-path docs --base-href /booking-portal/
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v2
         env:
