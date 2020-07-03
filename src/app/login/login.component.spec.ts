@@ -33,20 +33,5 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  test('should correctly check user', async() => {
-    const fixture = TestBed.createComponent(LoginComponent);
-    const component = fixture.componentInstance;
-    component.u = new Utenti("mario", "rossi", "mail", "mrossi", "mrossi")
-    component.checkUser();
-    expect(component.utenteOk).toBeTruthy();
-  });
 
-  test('should correctly submit', async() => {
-    const fixture = TestBed.createComponent(LoginComponent);
-    const component = fixture.componentInstance;
-    component.u = new Utenti("mario", "rossi", "mail", "mrossi", "mrossi")
-    component.psw = "mrossi";
-    component.onSubmit();
-    expect(component.passwordOk).toBeTruthy();
-  });
 });

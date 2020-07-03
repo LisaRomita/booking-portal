@@ -45,7 +45,7 @@ jobs:
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }} 
-          
+          file: ./coverage/my-app/coverage-summary.json
       - name: Build
         run: |
          npm install -g @angular/cli
