@@ -28,10 +28,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('booking-portal');
   });
 
- /* test('should render title', () => {
+  test(`should have no one logged in`, async() => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('booking-portal app is running!');
-  })*/;
+    const app = fixture.componentInstance;
+    expect(app.logged).toBeFalsy();
+  });
+
 });

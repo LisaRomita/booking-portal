@@ -37,4 +37,12 @@ describe('ContactUsComponent', () => {
   test('should have title', async() => {
     expect(dom.innerHTML).toContain('<h1>Come possiamo aiutarti?</h1>');
   });
+
+  test('should correctly submit', async() => {
+    const fixture = TestBed.createComponent(ContactUsComponent);
+    const component = fixture.componentInstance;
+    component.onSubmit();
+    expect(component.submitted).toBeTruthy();
+  });
+
 });

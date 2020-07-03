@@ -30,4 +30,12 @@ describe('PrenotaComponent', () => {
   test('should create', async() => {
     expect(component).toBeTruthy();
   });
+
+  test('should correctly submit', async() => {
+    const fixture = TestBed.createComponent(PrenotaComponent);
+    const component = fixture.componentInstance;
+    component.onSubmit();
+    expect(component.submitted).toBeTruthy();
+  });
+
 });

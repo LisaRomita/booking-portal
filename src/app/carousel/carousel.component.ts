@@ -58,7 +58,7 @@ export class CarouselComponent implements OnInit {
    // this.onRepeat();
   }
 
-  onRepeat(){
+  /*onRepeat(){
     setTimeout(() => {
       this.scroll();
       this.onRepeat();
@@ -68,5 +68,5 @@ export class CarouselComponent implements OnInit {
   scroll(){
     const next = this.currentPic + 1;
     this.currentPic = next === this.pics.length ? 0 : next;
-  }
+  }*/
 }
