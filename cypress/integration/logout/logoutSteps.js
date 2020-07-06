@@ -1,10 +1,11 @@
 Given('I am logged in', () => {
     cy.visit('http://localhost:4200/login')
     cy.get('#email').type('mrossi')
-    cy.wait(500)
+    cy.wait(1000)
     cy.get('#psw').type('mrossi')
-    cy.wait(500)
+    cy.wait(1000)
     cy.get('#button2').click()
+    cy.wait(1000)
     });
 When('I click the logout button', () => {
     cy.get('.navbar-nav')
