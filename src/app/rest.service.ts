@@ -59,4 +59,8 @@ export class RestService {
   addUser(u: Utenti): Observable<Utenti> {
     return this.http.post<Utenti>(this.urlUtenti, u);
   }
+
+  setCurrentUser(u: Utenti): void {
+    this.currentUser = u;
+  }
 }

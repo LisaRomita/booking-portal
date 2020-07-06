@@ -26,4 +26,44 @@ describe('PreventivoComponent', () => {
   test('should create', async() => {
     expect(component).toBeTruthy();
   });
+
+  test('should compute properly 150', async() => {
+    component.arrivo = new Date("2020-06-03");
+    component.partenza = new Date("2020-06-04");
+    component.adulti = "2";
+    component.bambini = "0";
+    component.stanze = "1";
+    component.onSubmit();
+    expect(component.totale).toEqual(150);
+  });
+
+  test('should compute properly 300', async() => {
+    component.arrivo = new Date("2020-06-03");
+    component.partenza = new Date("2020-06-04");
+    component.adulti = "3";
+    component.bambini = "3";
+    component.stanze = "2";
+    component.onSubmit();
+    expect(component.totale).toEqual(300);
+  });
+
+  test('should compute properly 70', async() => {
+    component.arrivo = new Date("2020-06-03");
+    component.partenza = new Date("2020-06-04");
+    component.adulti = "3";
+    component.bambini = "0";
+    component.stanze = "1";
+    component.onSubmit();
+    expect(component.totale).toEqual(70);
+  });
+
+  test('should compute properly 50', async() => {
+    component.arrivo = new Date("2020-06-03");
+    component.partenza = new Date("2020-06-04");
+    component.adulti = "2";
+    component.bambini = "3";
+    component.stanze = "1";
+    component.onSubmit();
+    expect(component.totale).toEqual(50);
+  });
 });

@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   onSubmit(){
     if(this.utenteOk == true){
       if(this.psw == this.u.password){
-        this.rs.currentUser = this.u;
+        this.rs.setCurrentUser(this.u);
         this.passwordOk = true;
         this.router.navigate(["/dashboard/"]);
       }
