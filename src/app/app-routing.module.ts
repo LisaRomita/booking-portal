@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { Routes, RouterModule } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginComponent } from './login/login.component';
-import { DetailComponent } from './detail/detail.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
-import { PrenotaComponent } from './prenota/prenota.component';
-import { RegistratiComponent } from './registrati/registrati.component';
-import { LogoutComponent } from './logout/logout.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { LoginComponent } from './pages/login/login.component';
+import { DetailComponent } from './pages/detail/detail.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { PrenotaComponent } from './pages/prenota/prenota.component';
+import { RegistratiComponent } from './pages/registrati/registrati.component';
+import { LogoutComponent } from './pages/logout/logout.component';
 
 
 const routes: Routes = [

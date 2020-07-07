@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { HeaderComponent } from './shared/components/header/header.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -11,7 +12,8 @@ describe('AppComponent', () => {
         RouterTestingModule, HttpClientTestingModule, NgbModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        HeaderComponent
       ],
     }).compileComponents();
   }));
@@ -26,12 +28,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('booking-portal');
-  });
-
-  test(`should have no one logged in`, async() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.logged).toBeFalsy();
   });
 
 });
