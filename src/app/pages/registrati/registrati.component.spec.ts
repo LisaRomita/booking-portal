@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { RegistratiComponent } from './registrati.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { UserService } from 'src/app/shared/services/user.service';
@@ -15,7 +14,7 @@ describe('RegistratiComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ RegistratiComponent ],
-      providers: [UserService],
+      providers: [ UserService],
       imports: [FormsModule, RouterTestingModule, HttpClientTestingModule],
       schemas: [NO_ERRORS_SCHEMA]
     })
@@ -33,16 +32,13 @@ describe('RegistratiComponent', () => {
   });
 
   test(`successful signup`, async() => {
-    const fixture = TestBed.createComponent(RegistratiComponent);
-    const component = fixture.componentInstance;
+    component.utenti = [];
     component.nome = 'nome';
     component.cognome = 'cognome';
     component.user = 'ncognome';
     component.password = 'ncognome';
     component.conferma = 'ncognome';
     component.email = 'mail';
-    component.nonCoincide = false;
-    component.duplicato = false;
     component.onSubmit();
     expect(component.submitted).toBeTruthy();
   });
@@ -55,8 +51,6 @@ describe('RegistratiComponent', () => {
       email: "mail",
       password: "mrossi"
     }
-    const fixture = TestBed.createComponent(RegistratiComponent);
-    const component = fixture.componentInstance;
     component.utenti = [];
     component.utenti.push(u);
     component.nome = 'mario';
@@ -67,8 +61,6 @@ describe('RegistratiComponent', () => {
   });
 
   test(`not matching passwords`, async() => {
-    const fixture = TestBed.createComponent(RegistratiComponent);
-    const component = fixture.componentInstance;
     component.nome = 'nome';
     component.cognome = 'cognome';
     component.user = 'ncognome';

@@ -1,4 +1,4 @@
-export class Stanze{
+export interface Stanze{
     id: string;
     tipo: string;
     prezzo: string;

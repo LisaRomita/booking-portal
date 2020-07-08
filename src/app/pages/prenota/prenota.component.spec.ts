@@ -7,6 +7,9 @@ import { PrenotazioneService } from 'src/app/pages/prenota/services/prenotazione
 import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { mock, instance, when, anything, anyOfClass } from 'ts-mockito';
+import { Prenotazioni } from './models/prenotazioni';
+
 
 describe('PrenotaComponent', () => {
   let component: PrenotaComponent;
@@ -15,7 +18,7 @@ describe('PrenotaComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ PrenotaComponent ],
-      providers: [UserService, PrenotazioneService],
+      providers: [PrenotazioneService, UserService],
       imports: [RouterTestingModule, HttpClientTestingModule, FormsModule],
       schemas: [NO_ERRORS_SCHEMA]
     })
