@@ -32,11 +32,11 @@ jobs:
         uses: codecov/codecov-action@v1
 
       - name: Cypress tests
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           build: npm run build
-          start: npm start
-          wait-on: https://lisaromita.github.io/booking-portal/
+          start: npm start                  # If your tests run against a local server, use start parameter, the server will run in the background and will shut down after tests complete
+          wait-on: 'http://localhost:4200'  # you can add a parameter wait-on and pass url to wait for the server to respond.
     #  - name: Push Build to Releases
     #    uses: ncipollo/release-action@v1
     #    with:
@@ -53,6 +53,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v2
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-          BASE_BRANCH: master
-          BRANCH: gh-pages
-          FOLDER: dist/booking-portal
+          BASE_BRANCH: master               # the branch to checkout
+          BRANCH: gh-pages                  # the branch you wish to deploy to
+          FOLDER: .                         # the folder you wish to deploy (the root directory)
