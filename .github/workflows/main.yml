@@ -55,4 +55,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           BASE_BRANCH: master               # the branch to checkout
           BRANCH: gh-pages                  # the branch you wish to deploy to
-          FOLDER: .                         # the folder you wish to deploy (the root directory)
+          FOLDER: dist/booking-portal       # the folder you wish to deploy
