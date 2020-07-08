@@ -3,9 +3,11 @@ Given('I navigate to the dashboard', () => {
     });
 When('I click on stanza singola card', () =>{
     cy.get("#singola").click()
+    cy.wait(500)
 })
 When('I click on prenota button', () =>{
     cy.get("#button5").click()
+    cy.wait(500)
 })
 When('I enter {string} in nome field', (query) => {
     cy.get('#nome').type(query)
