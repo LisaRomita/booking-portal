@@ -54,4 +54,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm install
-          npm run ng -- deploy --base-href=/booking-portal/ --no-silent
+          npm run ng -- deploy --base-href=/booking-portal/ --name="LisaRomita" --email="lisa.romita@libero.it" --no-silent
