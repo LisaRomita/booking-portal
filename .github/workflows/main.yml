@@ -50,9 +50,6 @@ jobs:
       #    npm install
       #    ng build --prod --output-path docs --base-href /booking-portal/
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GIHUB_TOKEN }}
-          BASE_BRANCH: master               # the branch to checkout
-          BRANCH: gh-pages                  # the branch you wish to deploy to
-          FOLDER: dist/booking-portal       # the folder you wish to deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
