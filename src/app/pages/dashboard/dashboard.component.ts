@@ -59,18 +59,19 @@ export class DashboardComponent implements OnInit {
   constructor(private us: UserService, private ss: StanzeService){}
 
   ngOnInit(): void {
-    this.ss.getStanze().subscribe(
+    if(this.ss.getStanze()){
+      this.ss.getStanze().subscribe(
       (res) => {
         this.stanze = res;
       },
       (error) => console.log(error)
-    );
+    )}
     this.getUsername();
   }
 
   getUsername() {
-    if(this.us.currentUser){
-      this.nome = this.us.currentUser.id;
+    if(this.us.getCurrentUser()){
+      this.nome = this.us.getCurrentUser().id;
     }
     
   }

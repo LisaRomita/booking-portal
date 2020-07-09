@@ -30,10 +30,10 @@ export class PrenotaComponent implements OnInit {
   constructor(private us: UserService, private ps: PrenotazioneService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    if(this.us.currentUser && this.us.currentUser.id != null)  {
-      this.mail = this.us.currentUser.email;
-      this.nome = this.us.currentUser.nome;
-      this.cognome = this.us.currentUser.cognome;
+    if(this.us.getCurrentUser() && this.us.getCurrentUser().id != null)  {
+      this.mail = this.us.getCurrentUser().email;
+      this.nome = this.us.getCurrentUser().nome;
+      this.cognome = this.us.getCurrentUser().cognome;
     }
   }
 

@@ -52,4 +52,8 @@ currentUser: Utenti;
   setCurrentUser(u: Utenti): void {
     this.currentUser = u;
   }
+
+  getCurrentUser(): Utenti {
+    return this.currentUser;
+  }
 }

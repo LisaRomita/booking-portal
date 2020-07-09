@@ -31,7 +31,8 @@ export class DetailComponent implements OnInit {
 
   getStanza(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.ss.getStanza(id).subscribe(s => this.stanza = s);
+    if(this.ss.getStanza(id))
+      this.ss.getStanza(id).subscribe(s => this.stanza = s);
   }
 
 

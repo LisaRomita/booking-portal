@@ -6,15 +6,31 @@ import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { Utenti } from 'src/app/shared/models/utenti';
+import { mock, instance, when, anything } from 'ts-mockito';
+import { of } from 'rxjs';
 
 describe('RegistratiComponent', () => {
   let component: RegistratiComponent;
   let fixture: ComponentFixture<RegistratiComponent>;
 
+  let mockedService: UserService = mock(UserService);
+  let mockedUser: Utenti = mock<Utenti>();
+  let u: Utenti = instance(mockedUser);
+
+  u = {
+    id: "mrossi",
+    nome: "mario",
+    cognome: "rossi",
+    email: "mail",
+    password: "mrossi"
+  }
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ RegistratiComponent ],
-      providers: [ UserService],
+      providers: [ {
+        provide: UserService,
+        useValue: instance(mockedService)}],
       imports: [FormsModule, RouterTestingModule, HttpClientTestingModule],
       schemas: [NO_ERRORS_SCHEMA]
     })
@@ -28,29 +44,22 @@ describe('RegistratiComponent', () => {
   }));
 
   test('should create', async() => {
-    expect(component).toBeTruthy();
+    when(mockedService.getUtenti()).thenReturn(of([u]));
+    component.utenti = [];
+    component.ngOnInit();
+    expect(component.utenti).toContain(u);
   });
 
   test(`successful signup`, async() => {
+    when(mockedService.addUser(anything())).thenReturn(of(u));
     component.utenti = [];
-    component.nome = 'nome';
-    component.cognome = 'cognome';
-    component.user = 'ncognome';
-    component.password = 'ncognome';
-    component.conferma = 'ncognome';
-    component.email = 'mail';
+    component.duplicato = false;
+    component.nonCoincide = false;
     component.onSubmit();
-    expect(component.submitted).toBeTruthy();
+    expect(component.utenti).toContain(u);
   });
 
   test(`utente già esistente`, async() => {
-    let u: Utenti = {
-      id: "mrossi",
-      nome: "mario",
-      cognome: "rossi",
-      email: "mail",
-      password: "mrossi"
-    }
     component.utenti = [];
     component.utenti.push(u);
     component.nome = 'mario';

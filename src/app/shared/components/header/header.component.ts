@@ -26,7 +26,7 @@ export class HeaderComponent implements AfterViewChecked {
   }
    
   ngAfterViewChecked(){
-    if(this.rs.currentUser){
+    if(this.rs.getCurrentUser()){
       this.logged = true;
     }else{
       this.logged = false;

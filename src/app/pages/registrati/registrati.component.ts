@@ -25,7 +25,8 @@ export class RegistratiComponent implements OnInit {
   submitted = false;
 
   ngOnInit(): void {
-    this.rs.getUtenti().subscribe( res => (this.utenti = res));
+    if(this.rs.getUtenti())
+      this.rs.getUtenti().subscribe( res => (this.utenti = res));
   }
 
   onSubmit() {

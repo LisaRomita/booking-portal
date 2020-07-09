@@ -34,7 +34,7 @@ export class ContactUsComponent implements OnInit {
   constructor(private us: UserService, private ms: MessageService) { }
 
   ngOnInit(): void {
-    if(this.us.currentUser && this.us.currentUser.id != null)  this.mail = this.us.currentUser.email;
+    if(this.us.getCurrentUser() && this.us.getCurrentUser().id != null)  this.mail = this.us.getCurrentUser().email;
   }
 
 }
