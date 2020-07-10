@@ -27,14 +27,14 @@ describe('PreventivoComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  test('should compute properly 150', async() => {
+  test('should compute properly 50', async() => {
     component.arrivo = new Date("2020-06-03");
     component.partenza = new Date("2020-06-04");
     component.adulti = "2";
     component.bambini = "0";
     component.stanze = "1";
     component.onSubmit();
-    expect(component.totale).toEqual(150);
+    expect(component.totale).toEqual(50);
   });
 
   test('should compute properly 300', async() => {
