@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/shared/services/user.service';
-import { Stanze } from '../../shared/models/stanze';
-import { ActivatedRoute } from '@angular/router';
-import { StanzeService } from 'src/app/shared/services/stanze.service';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { UserService, StanzeService } from 'src/app/shared/services';
+import { Stanze } from '../../shared/models';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardComponent implements OnInit {
 
@@ -56,13 +55,14 @@ export class DashboardComponent implements OnInit {
     }
   ];
 
-  constructor(private us: UserService, private ss: StanzeService){}
+  constructor(private us: UserService, private ss: StanzeService, private cd: ChangeDetectorRef){}
 
   ngOnInit(): void {
     if(this.ss.getStanze()){
       this.ss.getStanze().subscribe(
       (res) => {
         this.stanze = res;
+        this.cd.markForCheck();
       },
       (error) => console.log(error)
     )}

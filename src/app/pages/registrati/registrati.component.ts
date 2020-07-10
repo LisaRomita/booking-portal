@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { UserService } from 'src/app/shared/services/user.service';
 import { Utenti } from 'src/app/shared/models/utenti';
+
 @Component({
   selector: 'app-registrati',
   templateUrl: './registrati.component.html',
   styleUrls: ['./registrati.component.css'],
   exportAs: "ngForm",
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RegistratiComponent implements OnInit {
 
-  constructor(private rs: UserService) { }
+  constructor(private rs: UserService, private cd: ChangeDetectorRef) { }
 
   nome: string;
   cognome: string;
@@ -26,7 +28,10 @@ export class RegistratiComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.rs.getUtenti())
-      this.rs.getUtenti().subscribe( res => (this.utenti = res));
+      this.rs.getUtenti().subscribe( res => {
+        this.utenti = res;
+        this.cd.markForCheck()
+      });
   }
 
   onSubmit() {
@@ -37,7 +42,10 @@ export class RegistratiComponent implements OnInit {
         email: this.email,
         id: this.user,
         password: this.password
-      }).subscribe( u => {this.utenti.push(u)});
+      }).subscribe( u => {
+        this.utenti.push(u);
+        this.cd.markForCheck();
+      });
       this.submitted = true;
     }
   }

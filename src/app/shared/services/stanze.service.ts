@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Stanze } from '../models/stanze';
-import { Utenti } from '../models/utenti';
 import { Observable, of } from 'rxjs';
-import { Message } from '../../pages/contact-us/models/message';
-import { catchError } from 'rxjs/operators';
-import { Prenotazioni } from '../../pages/prenota/models/prenotazioni';
 
 @Injectable({
   providedIn: 'root'

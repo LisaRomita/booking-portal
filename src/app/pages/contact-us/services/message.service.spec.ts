@@ -2,9 +2,7 @@ import { TestBed, inject } from '@angular/core/testing';
 
 import { MessageService } from './message.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { HttpEvent, HttpEventType } from '@angular/common/http';
 import { Message } from '../models/message';
-import { Prenotazioni } from '../../prenota/models/prenotazioni';
 
 describe('MessageService', () => {
   let service: MessageService;

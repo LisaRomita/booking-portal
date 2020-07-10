@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Stanze } from '../models/stanze';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Utenti } from '../models/utenti';
 import { Observable, of } from 'rxjs';
-import { Message } from '../../pages/contact-us/models/message';
 import { catchError } from 'rxjs/operators';
-import { Prenotazioni } from '../../pages/prenota/models/prenotazioni';
 
 @Injectable({
   providedIn: 'root'
 })
 
+
 export class UserService{
     urlUtenti: string = "https://my-json-server.typicode.com/lisaromita/booking-portal/utenti/";
 
+    httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
 
 currentUser: Utenti;
   u: Utenti = { 
@@ -46,7 +47,7 @@ currentUser: Utenti;
   }
 
   addUser(u: Utenti): Observable<Utenti> {
-    return this.http.post<Utenti>(this.urlUtenti, u);
+    return this.http.post<Utenti>(this.urlUtenti, u, this.httpOptions);
   }
 
   setCurrentUser(u: Utenti): void {

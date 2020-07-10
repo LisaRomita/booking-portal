@@ -1,20 +1,19 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, NgZone, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { UserService } from 'src/app/shared/services/user.service';
 import { Utenti } from '../../shared/models/utenti'
 import { Router } from '@angular/router';
-import { mapToMapExpression } from '@angular/compiler/src/render3/util';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  exportAs: "ngForm"
+  exportAs: "ngForm",
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent implements OnInit {
 
   @Input() user: string;
   @Input() psw: string;
-  //u: Utenti = new Utenti("", "", "", "", "");
   u: Utenti = { 
     id: "", 
     nome: "" ,
@@ -26,7 +25,7 @@ export class LoginComponent implements OnInit {
   utenteOk = true;
   passwordOk = true;
 
-  constructor(private us: UserService, private router: Router) { }
+  constructor(private us: UserService, private router: Router, private ngZone: NgZone, private cd:ChangeDetectorRef) { }
 
   ngOnInit(): void {
   }
@@ -36,7 +35,7 @@ export class LoginComponent implements OnInit {
       if(this.psw == this.u.password){
         this.us.setCurrentUser(this.u);
         this.passwordOk = true;
-        this.router.navigate(["/dashboard/"]);
+        this.ngZone.run(() => this.router.navigate(['/dashboard']));
       }
       else this.passwordOk = false;
     }
@@ -44,24 +43,16 @@ export class LoginComponent implements OnInit {
   }
 
   checkUser(){
-    this.us.getUser(this.user).subscribe(u => this.u = u);
+    this.us.getUser(this.user).subscribe(u => {
+      this.u = u;
+      this.cd.markForCheck()
+    });
     if(this.u.id != "null")
     this.utenteOk = true;
     else this.utenteOk = false;
   }
 
-  /*checkPsw(){
-    if(this.utenteOk){
-      if(this.psw == this.u.password){
-        this.rs.currentUser = this.u;
-        this.passwordOk = true;
-      }
-      else this.passwordOk = false;
-    }
-    else this.passwordOk = false;
-    this.count++;
-  }*/
-  
-
-
+  printMe(): void {
+    console.log("Render");
+  }
 }

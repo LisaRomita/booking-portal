@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
-import { HeaderComponent } from './shared/components/header/header.component';
+import { HeaderComponent } from './core/header/header.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {

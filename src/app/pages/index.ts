@@ -1,0 +1,7 @@
+export {ContactUsComponent} from '../pages/contact-us/contact-us.component'
+export {DashboardComponent} from '../pages/dashboard/dashboard.component'
+export {DetailComponent} from '../pages/detail/detail.component'
+export {LoginComponent} from '../pages/login/login.component'
+export {LogoutComponent} from '../pages/logout/logout.component'
+export {PrenotaComponent} from '../pages/prenota/prenota.component'
+export {RegistratiComponent} from '../pages/registrati/registrati.component'

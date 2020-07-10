@@ -17,7 +17,7 @@ import { PrenotaComponent } from './pages/prenota/prenota.component';
 import { RegistratiComponent } from './pages/registrati/registrati.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LogoutComponent } from './pages/logout/logout.component';
-import { HeaderComponent } from './shared/components/header/header.component';
+import { HeaderComponent } from './core/header/header.component';
 
 @NgModule({
   declarations: [

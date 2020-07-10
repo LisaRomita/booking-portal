@@ -1,13 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
 import { Stanze } from '../../shared/models/stanze';
 import { StanzeService } from 'src/app/shared/services/stanze.service';
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.css']
+  styleUrls: ['./detail.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DetailComponent implements OnInit {
 
@@ -22,7 +22,7 @@ export class DetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private ss: StanzeService,
-    private location: Location,
+    private cd: ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {
@@ -32,7 +32,10 @@ export class DetailComponent implements OnInit {
   getStanza(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     if(this.ss.getStanza(id))
-      this.ss.getStanza(id).subscribe(s => this.stanza = s);
+      this.ss.getStanza(id).subscribe(s => {
+        this.stanza = s;
+        this.cd.markForCheck();
+      });
   }
 
 

@@ -2,9 +2,6 @@ import { TestBed, inject } from '@angular/core/testing';
 
 import { StanzeService } from './stanze.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { HttpEvent, HttpEventType } from '@angular/common/http';
-import { Message } from '../../pages/contact-us/models/message';
-import { Prenotazioni } from '../../pages/prenota/models/prenotazioni';
 
 describe('StanzeService', () => {
   let service: StanzeService;

@@ -2,11 +2,7 @@ import { TestBed, inject } from '@angular/core/testing';
 
 import { UserService } from './user.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { HttpEvent, HttpEventType } from '@angular/common/http';
-import { Message } from '../../pages/contact-us/models/message';
-import { Prenotazioni } from '../../pages/prenota/models/prenotazioni';
 import { Utenti } from '../models/utenti';
-import { componentFactoryName } from '@angular/compiler';
 
 describe('UserService', () => {
     let service: UserService;

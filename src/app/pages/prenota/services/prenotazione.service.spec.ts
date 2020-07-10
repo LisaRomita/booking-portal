@@ -2,8 +2,6 @@ import { TestBed, inject } from '@angular/core/testing';
 
 import { PrenotazioneService } from './prenotazione.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { HttpEvent, HttpEventType } from '@angular/common/http';
-import { Message } from '../../contact-us/models/message';
 import { Prenotazioni } from '../models/prenotazioni';
 
 describe('PrenotazioneService', () => {

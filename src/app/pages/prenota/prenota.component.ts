@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { UserService } from 'src/app/shared/services/user.service';
 import { PrenotazioneService } from 'src/app/pages/prenota/services/prenotazione.service'
 import { ActivatedRoute } from '@angular/router';
@@ -8,7 +8,8 @@ import { Prenotazioni } from './models/prenotazioni';
   selector: 'app-prenota',
   templateUrl: './prenota.component.html',
   styleUrls: ['./prenota.component.css'],
-  exportAs: "ngForm"
+  exportAs: "ngForm",
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PrenotaComponent implements OnInit {
 
@@ -27,7 +28,7 @@ export class PrenotaComponent implements OnInit {
 
   counter: number = 0;
 
-  constructor(private us: UserService, private ps: PrenotazioneService, private route: ActivatedRoute) { }
+  constructor(private us: UserService, private ps: PrenotazioneService, private route: ActivatedRoute, private cd:ChangeDetectorRef) { }
 
   ngOnInit(): void {
     if(this.us.getCurrentUser() && this.us.getCurrentUser().id != null)  {
@@ -53,6 +54,9 @@ export class PrenotaComponent implements OnInit {
       stanze: this.stanze,
       pagamento: this.pagamento,
       tipologia: id 
-    }).subscribe( p => {this.prenotazioni.push(p)})
+    }).subscribe( p => {
+      this.prenotazioni.push(p);
+      this.cd.markForCheck();
+    })
   }
 }

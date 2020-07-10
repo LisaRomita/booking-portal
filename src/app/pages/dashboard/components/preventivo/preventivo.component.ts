@@ -26,7 +26,7 @@ export class PreventivoComponent implements OnInit {
     const diff = Math.abs( new Date(this.partenza).getTime() - new Date(this.arrivo).getTime());
     this.delta = Math.ceil(diff/(1000*60*60*24));
     if( (this.adulti<= "2") && (this.bambini <= "2" ) && (this.stanze == "1")){
-      this.totale = 150*this.delta;
+      this.totale = 50*this.delta;
     }
       else if ((this.adulti > "2") && (this.bambini > "2") && (this.stanze == "2")){
       this.totale = 300*this.delta;

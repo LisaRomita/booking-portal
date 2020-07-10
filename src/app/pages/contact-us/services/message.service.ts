@@ -4,8 +4,6 @@ import { Stanze } from '../../../shared/models/stanze';
 import { Utenti } from '../../../shared/models/utenti';
 import { Observable, of } from 'rxjs';
 import { Message } from '../models/message';
-import { catchError } from 'rxjs/operators';
-import { Prenotazioni } from '../../prenota/models/prenotazioni';
 
 @Injectable({
   providedIn: 'root'
