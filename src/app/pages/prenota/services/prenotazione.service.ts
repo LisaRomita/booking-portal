@@ -12,13 +12,33 @@ import { Prenotazioni } from '../models/prenotazioni';
 })
 export class PrenotazioneService {
 
-  urlPrenotazioni: string = "https://my-json-server.typicode.com/lisaromita/booking-portal/prenotazioni";
+  urlPrenotazioni: string = "https://booking-portal-3edee.firebaseio.com/prenotazioni.json";
 
 
   constructor(private http: HttpClient) { }
 
-  addPrenotazione(p: Prenotazioni): Observable<Prenotazioni>{
-    return this.http.post<Prenotazioni>(this.urlPrenotazioni, p);
+  addPrenotazione({
+  "nome": nome, 
+  "cognome": cognome,
+  "email": mail,
+  "arrivo": arrivo,
+  "partenza": partenza,
+  "adulti": adulti,
+  "bambini": bambini,
+  "stanze": stanze,
+  "pagamento": pagamento,
+  "tipologia": id} ): Observable<Prenotazioni>{
+    return this.http.post<Prenotazioni>(this.urlPrenotazioni, {
+    "nome": nome, 
+    "cognome": cognome,
+    "email": mail,
+    "arrivo": arrivo,
+    "partenza": partenza,
+    "adulti": adulti,
+    "bambini": bambini,
+    "stanze": stanze,
+    "pagamento": pagamento,
+    "tipologia": id} );
   }
 
 }

@@ -43,17 +43,16 @@ export class PrenotaComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.counter++;
     this.ps.addPrenotazione({ 
-      id:this.counter,
-      nome: this.nome, 
-      cognome: this.cognome,
-      email: this.mail,
-      arrivo: this.arrivo,
-      partenza: this.partenza,
-      adulti: this.adulti,
-      bambini: this.bambini,
-      stanze: this.stanze,
-      pagamento: this.pagamento,
-      tipologia: id 
+      "nome": this.nome, 
+      "cognome": this.cognome,
+      "email": this.mail,
+      "arrivo": this.arrivo,
+      "partenza": this.partenza,
+      "adulti": this.adulti,
+      "bambini": this.bambini,
+      "stanze": this.stanze,
+      "pagamento": this.pagamento,
+      "tipologia": id 
     }).subscribe( p => {
       this.prenotazioni.push(p);
       this.cd.markForCheck();

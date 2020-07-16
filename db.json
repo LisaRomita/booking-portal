@@ -1,49 +1,49 @@
 {
   "stanze": [
     {
-      "id": 1,
+      "id": 0,
       "tipo": "singola",
       "prezzo": 50,
       "rate": 3,
       "src": "https://www.bwcityhotel-ge.it/resources/images/7eda536e-8b53-4208-8ca9-60cd7c00f204/it/B/camera-singola-nel-centro-di-genova.jpg"
     },
     {
-      "id": 2,
+      "id": 1,
       "tipo": "matrimoniale",
       "prezzo": 90,
       "rate": 5,
       "src": "https://www.hotelserapo.com/sites/hotelserapo.gisnet.it/files/Hotel_Serapo_Classic_Superior_t01.jpg"
     },
     {
-      "id": 3,
+      "id": 2,
       "tipo": "doppia",
       "prezzo": 70,
       "rate": 2,
       "src": "http://www.hotelgravinasanpietro.it/wp-content/uploads/2013/12/doppia_big.jpg"
     },
     {
-      "id": 4,
+      "id": 5,
       "tipo": "singola premium",
       "prezzo": 80,
       "rate": 5,
       "src": "https://www.hoteldeipittori.it/wp-content/uploads/2016/10/Felice-Casorati-2-1.jpg"
     },
     {
-      "id": 5,
+      "id": 6,
       "tipo": "suite",
       "prezzo": 100,
       "rate": 5,
       "src": "https://d1vp8nomjxwyf1.cloudfront.net/wp-content/uploads/sites/57/2016/03/05133652/Hotel-Royal-web-01Corrige.jpg"
     },
     {
-      "id": 6,
+      "id": 7,
       "tipo": "tripla",
       "prezzo": 70,
       "rate": 3,
       "src": "https://media-cdn.tripadvisor.com/media/photo-s/12/4f/97/75/hotel-il-giardino.jpg"
     },
     {
-      "id": 7,
+      "id": 8,
       "tipo": "family",
       "prezzo": 150,
       "rate": 5,

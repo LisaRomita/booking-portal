@@ -10,7 +10,7 @@ import { catchError } from 'rxjs/operators';
 
 
 export class UserService{
-    urlUtenti: string = "https://my-json-server.typicode.com/lisaromita/booking-portal/utenti/";
+    urlUtenti: string = "https://booking-portal-3edee.firebaseio.com/utenti";
 
     httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -28,12 +28,11 @@ currentUser: Utenti;
   constructor(private http: HttpClient) { }
 
   getUtenti(){
-    return this.http.get<Utenti[]>(this.urlUtenti);
+    return this.http.get<Utenti[]>(this.urlUtenti+'.json');
   }
 
   getUser(id: string): Observable<Utenti> {
-    
-    const url3 =  `${this.urlUtenti}/${id}`;
+    const url3 =  `${this.urlUtenti}/${id}.json`;
     return this.http.get<Utenti>(url3)
       .pipe(
         catchError(this.handleError<Utenti>('getUser', this.u ))
@@ -46,8 +45,20 @@ currentUser: Utenti;
     }
   }
 
-  addUser(u: Utenti): Observable<Utenti> {
-    return this.http.post<Utenti>(this.urlUtenti, u, this.httpOptions);
+  addUser({
+    "nome":nome,
+    "cognome": cognome,
+    "email": email,
+    "id": user,
+    "password": password
+  }): Observable<Utenti> {
+    return this.http.patch<Utenti>(`${this.urlUtenti}/${user}.json`, {
+      "nome":nome,
+      "cognome": cognome,
+      "email": email,
+      "id": user,
+      "password": password
+    }, this.httpOptions);
   }
 
   setCurrentUser(u: Utenti): void {

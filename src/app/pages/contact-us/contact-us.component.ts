@@ -20,16 +20,17 @@ export class ContactUsComponent implements OnInit {
 
   submitted = false;
   m: Message = {
-    id: this.counter,
     email: this.mail,
     txt: this.text
   }
 
   onSubmit() {
     this.submitted = true;
-    this.counter++;
     
-    this.ms.saveMes(this.m).subscribe(msg => {
+    this.ms.saveMes({
+      "email": this.mail,
+      "txt": this.text
+    }).subscribe(msg => {
       this.messaggi.push(msg);
       this.cd.markForCheck();
   });

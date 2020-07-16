@@ -11,12 +11,12 @@ import { Message } from '../models/message';
 
 export class MessageService {
     
-  urlMess: string = "https://my-json-server.typicode.com/lisaromita/booking-portal/messaggi";
+  urlMess: string = "https://booking-portal-3edee.firebaseio.com/messaggi.json";
 
   constructor(private http: HttpClient) { }
 
   
-  saveMes(message: Message): Observable<Message>{
-    return this.http.post<Message>(this.urlMess, message);
+  saveMes({ "email": mail, "txt": text}): Observable<Message>{
+    return this.http.post<Message>(this.urlMess, { "email": mail, "txt": text});
   }
 }

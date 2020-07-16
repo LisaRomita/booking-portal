@@ -35,7 +35,7 @@ describe('UserService', () => {
       
       /*We then make use of the HttpTestingController (injected in the test as httpMock) to assert 
       that one request was made to the service’s url property. */
-      const mockReq = httpMock.expectOne(rs.urlUtenti+'/mrossi');
+      const mockReq = httpMock.expectOne(rs.urlUtenti+'/mrossi.json');
   
       /*we assert that the request hasn’t been cancelled and the the response if of type json */
       expect(mockReq.cancelled).toBeFalsy();
@@ -73,7 +73,7 @@ describe('UserService', () => {
       
       /*We then make use of the HttpTestingController (injected in the test as httpMock) to assert 
       that one request was made to the service’s url property. */
-      const mockReq = httpMock.expectOne(rs.urlUtenti);
+      const mockReq = httpMock.expectOne(rs.urlUtenti+'.json');
   
       /*we assert that the request hasn’t been cancelled and the the response if of type json */
       expect(mockReq.cancelled).toBeFalsy();
@@ -104,7 +104,7 @@ describe('UserService', () => {
       
       /*We then make use of the HttpTestingController (injected in the test as httpMock) to assert 
       that one request was made to the service’s url property. */
-      const mockReq = httpMock.expectOne(rs.urlUtenti);
+      const mockReq = httpMock.expectOne(rs.urlUtenti+'/mrossi.json');
   
       /*we assert that the request hasn’t been cancelled and the the response if of type json */
       expect(mockReq.cancelled).toBeFalsy();

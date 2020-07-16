@@ -8,17 +8,17 @@ import { Observable, of } from 'rxjs';
 })
 export class StanzeService {
 
-  url: string = "https://my-json-server.typicode.com/lisaromita/booking-portal/stanze/";
+  url: string = "https://booking-portal-3edee.firebaseio.com/stanze";
 
 
   constructor(private http: HttpClient) { }
 
   getStanze(){
-    return this.http.get<Stanze[]>(this.url);
+    return this.http.get<Stanze[]>(this.url+'.json');
   }
 
   getStanza(id: number): Observable<Stanze> {
-    const url2 =  `${this.url}/${id}`;
+    const url2 =  `${this.url}/${id}.json`;
     return this.http.get<Stanze>(url2);
   }
 

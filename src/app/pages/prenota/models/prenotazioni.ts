@@ -1,5 +1,4 @@
 export interface Prenotazioni{
-    id: number;
     nome: string;
     cognome: string;
     email: string;

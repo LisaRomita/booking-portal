@@ -37,11 +37,11 @@ export class RegistratiComponent implements OnInit {
   onSubmit() {
     if (this.duplicato == false && this.nonCoincide == false) {
       this.rs.addUser({
-        nome:this.nome,
-        cognome: this.cognome,
-        email: this.email,
-        id: this.user,
-        password: this.password
+        "nome":this.nome,
+        "cognome": this.cognome,
+        "email": this.email,
+        "id": this.user,
+        "password": this.password
       }).subscribe( u => {
         this.utenti.push(u);
         this.cd.markForCheck();

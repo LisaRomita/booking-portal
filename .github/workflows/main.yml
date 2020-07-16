@@ -37,21 +37,16 @@ jobs:
           build: npm run build
           start: npm start                  # If your tests run against a local server, use start parameter, the server will run in the background and will shut down after tests complete
           wait-on: 'http://localhost:4200'  # you can add a parameter wait-on and pass url to wait for the server to respond.
-    #  - name: Push Build to Releases
-    #    uses: ncipollo/release-action@v1
-    #    with:
-    #      tag: v2.3
-    #      artifacts: "dist/booking-portal/*"
-    #      token: ${{ secrets.TOKEN }}
-      
-      # - name: Build
+  
+      # - name: Prepare and deploy
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       #   run: |
-      #    npm install -g @angular/cli
-      #    npm install
-      #    ng build --prod --output-path docs --base-href /booking-portal/
-      - name: Prepare and deploy
+      #     npm install
+      #     npm run ng -- deploy --base-href=/booking-portal/ --name="LisaRomita" --email="lisa.romita@libero.it" --no-silent
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          npm install
-          npm run ng -- deploy --base-href=/booking-portal/ --name="LisaRomita" --email="lisa.romita@libero.it" --no-silent
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }
