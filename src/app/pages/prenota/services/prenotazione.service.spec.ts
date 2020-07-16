@@ -23,7 +23,6 @@ describe('PrenotazioneService', () => {
     [HttpTestingController, PrenotazioneService],
     (httpMock: HttpTestingController, rs: PrenotazioneService) =>  {
         const p: Prenotazioni = {
-          id:1, 
           nome:"mario",
           cognome: "rossi",
           email: "mail",

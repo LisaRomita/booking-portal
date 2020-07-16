@@ -20,7 +20,6 @@ describe('ContactUsComponent', () => {
   let mes: Message = instance(mockedMes);
 
   mes = {
-    id: 1,
     email: "mail",
     txt: "ciao"
   }

@@ -32,7 +32,6 @@ describe('PrenotaComponent', () => {
   }
 
   p = {
-      id:1,
       nome: "mario", 
       cognome: "rossi",
       email: "mail",

@@ -24,7 +24,6 @@ describe('MessageService', () => {
     [HttpTestingController, MessageService],
     (httpMock: HttpTestingController, rs: MessageService) =>  {
         const mes: Message = {
-          id:1,
           email: "mail",
           txt: "ciao"
         };
