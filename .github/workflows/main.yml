@@ -69,16 +69,14 @@ jobs:
   deploy:
     needs: [jest, cypress]
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
       - name: Deploy to Firebase
-        run: |
-          npm install
-          npm run ng build --prod
+      - run: npm install
+      - run: npm run ng build --prod
         uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
