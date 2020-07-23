@@ -36,6 +36,13 @@ jobs:
         run: |
           npm i -f
           npm test
+  coverage:
+    needs: jest
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
       - name: Coverage report
         uses: codecov/codecov-action@v1
 
