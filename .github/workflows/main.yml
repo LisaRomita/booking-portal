@@ -27,7 +27,11 @@ jobs:
           npm run build
   jest:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
     steps:
+    - uses: actions/checkout@v1
       - name: Jest tests
         run: |
           npm test
@@ -36,7 +40,11 @@ jobs:
 
   cypress:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
     steps:
+    - uses: actions/checkout@v1
       - name: Cypress tests
         uses: cypress-io/github-action@v2
         with:
@@ -53,7 +61,11 @@ jobs:
   deploy:
     needs: [jest, cypress]
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
     steps:
+    - uses: actions/checkout@v1
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
