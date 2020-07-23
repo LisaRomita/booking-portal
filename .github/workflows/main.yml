@@ -1,5 +1,5 @@
 on: push
-name: Build Angular
+name: Booking Portal
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,12 +25,17 @@ jobs:
         run: |
           npm i -f
           npm run build
+  jest:
+    runs-on: ubuntu-latest
+    steps:
       - name: Jest tests
         run: |
           npm test
       - name: Coverage report
         uses: codecov/codecov-action@v1
 
+  cypress:
+    runs-on: ubuntu-latest
       - name: Cypress tests
         uses: cypress-io/github-action@v2
         with:
@@ -44,6 +49,9 @@ jobs:
       #   run: |
       #     npm install
       #     npm run ng -- deploy --base-href=/booking-portal/ --name="LisaRomita" --email="lisa.romita@libero.it" --no-silent
+  deploy:
+    needs: [jest, cypress]
+    runs-on: ubuntu-latest
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
