@@ -31,7 +31,7 @@ jobs:
       matrix:
         node-version: [12.x]
     steps:
-    - uses: actions/checkout@v1
+      - uses: actions/checkout@v1
       - name: Jest tests
         run: |
           npm test
@@ -44,7 +44,7 @@ jobs:
       matrix:
         node-version: [12.x]
     steps:
-    - uses: actions/checkout@v1
+      - uses: actions/checkout@v1
       - name: Cypress tests
         uses: cypress-io/github-action@v2
         with:
@@ -65,7 +65,7 @@ jobs:
       matrix:
         node-version: [12.x]
     steps:
-    - uses: actions/checkout@v1
+      - uses: actions/checkout@v1
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
