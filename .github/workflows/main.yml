@@ -36,6 +36,7 @@ jobs:
 
   cypress:
     runs-on: ubuntu-latest
+    steps:
       - name: Cypress tests
         uses: cypress-io/github-action@v2
         with:
@@ -52,6 +53,7 @@ jobs:
   deploy:
     needs: [jest, cypress]
     runs-on: ubuntu-latest
+    steps:
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
