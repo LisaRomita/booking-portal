@@ -16,9 +16,9 @@
                 <input type="password" class="form-control form-control-lg" id="psw" [(ngModel)]="psw" name="psw" required>
               </div>
               <br><br>
-              <button type="submit" class="btn btn-success btn-lg" id="button2" [disabled]="!myFormL.form.valid" (click)="onSubmit()"><b>LOGIN</b></button> 
+              <button type="submit" class="btn btn-success btn-lg" id="button2" [disabled]="!myFormL.form.valid" (click)="onSubmit()"><strong>LOGIN</strong></button> 
               <br><br>
-              <div class="alert alert-danger" id="alert" role="alert" *ngIf="!passwordOk" style="color: darkred;"><b>Username e/o password errati!</b></div>
+              <div class="alert alert-danger" id="alert" role="alert" *ngIf="!passwordOk" style="color: darkred;"><strong>Username e/o password errati!</strong></div>
               <br>
             </form>
           </div>
@@ -28,7 +28,7 @@
       
     </div><br>
     <div style="text-align: center;">
-      <p><b>Non hai un account?</b></p><br>
-      <a routerLink="/registrati"><button type="button" id="reg" class="btn btn-primary btn-lg"><b>REGISTRATI</b></button></a>
+      <p><strong>Non hai un account?</strong></p><br>
+      <a routerLink="/registrati"><button type="button" id="reg" class="btn btn-primary btn-lg"><strong>REGISTRATI</strong></button></a>
     </div>
 {{printMe()}}

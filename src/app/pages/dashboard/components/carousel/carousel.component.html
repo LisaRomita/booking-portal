@@ -9,26 +9,26 @@
     </div>
     </ng-template>
 </div>-->
-<ngb-carousel #carousel [interval]="4000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
+<ngb-carousel class="ngb-carousel" #carousel [interval]="4000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
     <ng-template ngbSlide *ngFor="let pic of pics; index as i">
         <div class="carousel-caption">
             <h3>{{pic.desc}}</h3>
         </div>
         <div class="picsum-img-wrapper">
-            <img [src]="pic.src" class="rounded">
+            <img [src]="pic.src" class="rounded" alt="\">
         </div>
     </ng-template>
 </ngb-carousel>
 
 <h1>Descrizione</h1>
-<p>Il Panoramic Hotel è un moderno albergo 4 stelle, <b>elegante e affacciato sul mare</b>, l’occasione per una vacanza romantica e di grande charme, nell’incantato scenario di Taormina e del Mare di Sicilia. <br><br>
+<p>Il Panoramic Hotel è un moderno albergo 4 stelle, <strong>elegante e affacciato sul mare</strong>, l’occasione per una vacanza romantica e di grande charme, nell’incantato scenario di Taormina e del Mare di Sicilia. <br><br>
 
-    Gli ambienti del Panoramic Hotel sono <b>nuovi, luminosi ed accoglienti come il nostro staff alla reception,</b> lieto di assistervi durante il vostro soggiorno a Taormina, suggerendovi itinerari, visite guidate e qualche buon ristorante del centro storico. <br><br>
+    Gli ambienti del Panoramic Hotel sono <strong>nuovi, luminosi ed accoglienti come il nostro staff alla reception,</strong> lieto di assistervi durante il vostro soggiorno a Taormina, suggerendovi itinerari, visite guidate e qualche buon ristorante del centro storico. <br><br>
     
-    Concedendovi un cocktail sulla terrazza panoramica che ospita la <b>piscina,</b> rimarrete sbalorditi dalla vista del mare e dagli splendidi scorci della baia dell’Isola Bella. Qui, durante le giornate estive, il nostro bar serve piatti tipici siciliani, snack e insalate. <br><br>
+    Concedendovi un cocktail sulla terrazza panoramica che ospita la <strong>piscina,</strong> rimarrete sbalorditi dalla vista del mare e dagli splendidi scorci della baia dell’Isola Bella. Qui, durante le giornate estive, il nostro bar serve piatti tipici siciliani, snack e insalate. <br><br>
     
-    Al termine di una scalinata che parte proprio di fronte all’albergo, vi attendono i ciotoli bianchi della <b>spiaggia di Isola Bella,</b> tra stabilimenti balneari con lettini ed ombrelloni e zone di libero accesso ad un mare pulito, trasparente e già profondo a pochi metri da riva. <br><br>
+    Al termine di una scalinata che parte proprio di fronte all’albergo, vi attendono i ciotoli bianchi della <strong>spiaggia di Isola Bella,</strong> tra stabilimenti balneari con lettini ed ombrelloni e zone di libero accesso ad un mare pulito, trasparente e già profondo a pochi metri da riva. <br><br>
     
-    A vostra disposizione inoltre, telefonia Voip – ideale per le chiamate internazionali a basso costo – <b>internet Wi-fi, prima colazione e reception aperta 24 ore</b>.</p>
+    A vostra disposizione inoltre, telefonia Voip – ideale per le chiamate internazionali a basso costo – <strong>internet Wi-fi, prima colazione e reception aperta 24 ore</strong>.</p>
 
     <br>
