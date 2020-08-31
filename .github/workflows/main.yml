@@ -25,6 +25,21 @@ jobs:
         run: |
           npm i -f
           npm run build
+
+  SonarQube:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+    - uses: actions/checkout@v1
+    - name: SonarQube Scan
+      uses: kitabisa/sonarqube-action@master
+      with:
+        host: 'http://localhost:9000/'
+        login: 'admin'
+        password: 'admin'
+
   jest:
     runs-on: ubuntu-latest
     strategy:
