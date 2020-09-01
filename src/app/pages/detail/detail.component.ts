@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Stanze } from '../../shared/models/stanze';
 import { StanzeService } from 'src/app/shared/services/stanze.service';

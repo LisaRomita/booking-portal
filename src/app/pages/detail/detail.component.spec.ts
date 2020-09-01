@@ -4,7 +4,6 @@ import { Stanze } from 'src/app/shared/models/stanze'
 import { DetailComponent } from './detail.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { StanzeService } from 'src/app/shared/services/stanze.service';
-import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { of } from 'rxjs';
@@ -15,7 +14,6 @@ describe('DetailComponent', () => {
 
   let mockedStanze: Stanze = mock<Stanze>();
   let s1: Stanze = instance(mockedStanze);
-  let s2: Stanze = instance(mockedStanze);
 
   s1 = {
     id: "1",
@@ -24,14 +22,6 @@ describe('DetailComponent', () => {
     rate: "4",
     src: "src"
   }
-
-  s2 = {
-  id: "2",
-  tipo: "doppia",
-  prezzo: "80",
-  rate: "4",
-  src: "src2"
-}
   
   let mockedStanzeService: StanzeService = mock(StanzeService);
 

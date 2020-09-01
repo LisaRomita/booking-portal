@@ -15,7 +15,7 @@ describe('UserService', () => {
     });
   
     test('should be created', () => {
-      const service: UserService = TestBed.get(UserService);
+      service = TestBed.get(UserService);
       expect(service).toBeTruthy();
     });
   
@@ -120,7 +120,7 @@ describe('UserService', () => {
     }))
 
     test('the setter should work', async()=>{
-      const service: UserService = TestBed.get(UserService);
+      service = TestBed.get(UserService);
       let u: Utenti =  { id: "mrossi",
       nome: "mario",
       cognome: "rossi",
@@ -131,7 +131,7 @@ describe('UserService', () => {
     })
     
     test('the getter should work', async()=>{
-      const service: UserService = TestBed.get(UserService);
+      service = TestBed.get(UserService);
       let u: Utenti =  { id: "mrossi",
       nome: "mario",
       cognome: "rossi",

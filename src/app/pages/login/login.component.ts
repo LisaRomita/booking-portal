@@ -47,8 +47,9 @@ export class LoginComponent implements OnInit {
       this.u = u;
       this.cd.markForCheck()
     });
-    if(this.u.id != "null")
-    this.utenteOk = true;
+    if(this.u.id != "null"){
+      this.utenteOk = true;
+    }
     else this.utenteOk = false;
   }
 

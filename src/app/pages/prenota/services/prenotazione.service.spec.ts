@@ -15,7 +15,7 @@ describe('PrenotazioneService', () => {
   });
 
   test('should be created', () => {
-    const service: PrenotazioneService = TestBed.get(PrenotazioneService);
+    service = TestBed.get(PrenotazioneService);
     expect(service).toBeTruthy();
   });  
 

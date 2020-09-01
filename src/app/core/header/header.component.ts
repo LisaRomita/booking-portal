@@ -5,7 +5,6 @@ import { ContactUsComponent } from '../../pages/contact-us/contact-us.component'
 import { DashboardComponent } from '../../pages/dashboard/dashboard.component';
 import { UserService } from '../../shared/services/user.service';
 import { LogoutComponent } from '../../pages/logout/logout.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
   selector: 'app-header',

@@ -4,7 +4,6 @@ import { DashboardComponent } from './dashboard.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { UserService } from 'src/app/shared/services/user.service';
 import { StanzeService } from 'src/app/shared/services/stanze.service'
-import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { Utenti } from 'src/app/shared/models/utenti';

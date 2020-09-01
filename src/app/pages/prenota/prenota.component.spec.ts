@@ -3,11 +3,10 @@ import { FormsModule } from '@angular/forms'
 import { PrenotaComponent } from './prenota.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { UserService } from 'src/app/shared/services/user.service';
-import { PrenotazioneService } from 'src/app/pages/prenota/services/prenotazione.service'
-import { ActivatedRoute } from '@angular/router';
+import { PrenotazioneService } from 'src/app/pages/prenota/services/prenotazione.service';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { mock, instance, when, anything, anyOfClass, anyString } from 'ts-mockito';
+import { mock, instance, when, anything } from 'ts-mockito';
 import { Prenotazioni } from './models/prenotazioni';
 import { Utenti } from 'src/app/shared/models/utenti';
 import { of } from 'rxjs';

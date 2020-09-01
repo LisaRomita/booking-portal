@@ -1,14 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { mock, instance, when, reset, deepEqual, anything } from 'ts-mockito';
+import { mock, instance, when, anything } from 'ts-mockito';
 import { LoginComponent } from './login.component';
-import { NO_ERRORS_SCHEMA, Component } from '@angular/core';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { UserService } from 'src/app/shared/services/user.service';
-import { Utenti } from '../../shared/models/utenti'
-import { Router } from '@angular/router';
+import { Utenti } from '../../shared/models/utenti';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { Observable, of } from 'rxjs';
+import { of } from 'rxjs';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;

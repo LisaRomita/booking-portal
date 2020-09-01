@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 
-import { callbackify } from "util"
 
 context('Dashboard', () => {
     beforeEach(() => {

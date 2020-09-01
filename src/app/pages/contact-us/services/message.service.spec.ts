@@ -15,7 +15,7 @@ describe('MessageService', () => {
   });
 
   test('should be created', () => {
-    const service: MessageService = TestBed.get(MessageService);
+    service = TestBed.get(MessageService);
     expect(service).toBeTruthy();
   });
 

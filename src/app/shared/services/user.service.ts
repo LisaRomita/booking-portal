@@ -41,7 +41,7 @@ currentUser: Utenti;
 
   private handleError<Utenti>(operation = "operation", result?: Utenti){
     return(error: any): Observable<Utenti> => {
-    return of(result as Utenti);
+    return of(result);
     }
   }
 

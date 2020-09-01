@@ -31,7 +31,7 @@ describe('StanzeService', () => {
   });
 
   test('should be created', () => {
-    const service: StanzeService = TestBed.get(StanzeService);
+    service = TestBed.get(StanzeService);
     expect(service).toBeTruthy();
   });
 
