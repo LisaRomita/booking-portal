@@ -35,7 +35,7 @@ export class RegistratiComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.duplicato == false && this.nonCoincide == false) {
+    if (!this.duplicato && !this.nonCoincide) {
       this.rs.addUser({
         "nome":this.nome,
         "cognome": this.cognome,
