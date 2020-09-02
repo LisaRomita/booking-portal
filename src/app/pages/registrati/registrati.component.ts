@@ -1,7 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { UserService } from 'src/app/shared/services/user.service';
 import { Utenti } from 'src/app/shared/models/utenti';
-import * as bcrypt from 'bcryptjs';
 
 @Component({
   selector: 'app-registrati',
@@ -42,7 +41,7 @@ export class RegistratiComponent implements OnInit {
         "cognome": this.cognome,
         "email": this.email,
         "id": this.user,
-        "password": bcrypt.hash(this.password, 10, function(err, hash){})
+        "password": this.password
       }).subscribe( u => {
         this.utenti.push(u);
         this.cd.markForCheck();

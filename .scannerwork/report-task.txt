@@ -2,5 +2,5 @@ projectKey=booking-portal
 serverUrl=http://localhost:9000
 serverVersion=7.9.4.35981
 dashboardUrl=http://localhost:9000/dashboard?id=booking-portal
-ceTaskId=AXRKKxbhOf_aUVJ-IdQC
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AXRKKxbhOf_aUVJ-IdQC
+ceTaskId=AXRO_4IHOf_aUVJ-IdQE
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXRO_4IHOf_aUVJ-IdQE
