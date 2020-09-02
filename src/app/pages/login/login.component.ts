@@ -2,7 +2,7 @@ import { Component, OnInit, Input, NgZone, ChangeDetectionStrategy, ChangeDetect
 import { UserService } from 'src/app/shared/services/user.service';
 import { Utenti } from '../../shared/models/utenti'
 import { Router } from '@angular/router';
-import { bcryptjs } from 'bcryptjs'
+import * as bcrypt from 'bcryptjs'
 
 @Component({
   selector: 'app-login',
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     if(this.utenteOk == true){
-      if(bcryptjs.compare(this.psw, this.u.password)){
+      if(bcrypt.compareSync(this.psw, this.u.password)){
         this.us.setCurrentUser(this.u);
         this.passwordOk = true;
         this.ngZone.run(() => this.router.navigate(['/dashboard']));
