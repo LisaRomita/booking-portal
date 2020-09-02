@@ -4,7 +4,6 @@ import { Utenti } from '../models/utenti';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import * as bcrypt from '../../../../custom-bcrypt';
 
 @Injectable({
   providedIn: 'root'
@@ -59,9 +58,8 @@ currentUser: Utenti;
       "cognome": cognome,
       "email": email,
       "id": user,
-      "password": bcrypt.hash(password)
+      "password": password
     }, this.httpOptions);
-    console.log(bcrypt.hash(password));
   }
 
   setCurrentUser(u: Utenti): void {
