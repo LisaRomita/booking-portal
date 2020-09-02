@@ -78,7 +78,7 @@ jobs:
       #     npm install
       #     npm run ng -- deploy --base-href=/booking-portal/ --name="LisaRomita" --email="lisa.romita@libero.it" --no-silent
   deploy:
-    needs: [jest, cypress]
+    needs: [jest, cypress, sonarcloud]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
