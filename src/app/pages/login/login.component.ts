@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     if(this.utenteOk == true){
-      if(bcrypt.compareSync(this.psw, this.u.password)){
+      if(bcrypt.compare(this.psw, this.u.password)){
         this.us.setCurrentUser(this.u);
         this.passwordOk = true;
         this.ngZone.run(() => this.router.navigate(['/dashboard']));

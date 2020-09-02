@@ -42,7 +42,7 @@ export class RegistratiComponent implements OnInit {
         "cognome": this.cognome,
         "email": this.email,
         "id": this.user,
-        "password": bcrypt.hashSync(this.password)
+        "password": bcrypt.hash(this.password, 10, function(err, hash){})
       }).subscribe( u => {
         this.utenti.push(u);
         this.cd.markForCheck();
