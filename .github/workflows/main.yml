@@ -25,7 +25,6 @@ jobs:
         run: |
           npm i -f
           npm run build
-          sed -i 's+/home/runner/work/booking-portal/booking-portal+/github/workspace+g' coverage/my-app/lcov.info
 
   sonarcloud:
     runs-on: ubuntu-latest
