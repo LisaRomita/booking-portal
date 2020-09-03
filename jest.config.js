@@ -6,6 +6,7 @@ module.exports = {
   roots: ['<rootDir>/src/'],
   testMatch: ['**/+(*.)+(spec).+(ts)'],
   setupFilesAfterEnv: ['<rootDir>/src/test.ts'],
+  testResultsProcessor: 'jest-sonar-reporter',
   collectCoverage: true,
   coverageReporters: ['html', 'text', 'json-summary', 'lcov', 'clover'],
   coverageDirectory: 'coverage/my-app',

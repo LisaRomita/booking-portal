@@ -32,14 +32,6 @@ jobs:
       - uses: actions/checkout@v1
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
-        args: >
-          -Dsonar.organization=booking-portal
-          -Dsonar.projectKey=LisaRomita_booking-portal
-          -Dsonar.typescript.lcov.reportPaths=coverage/my-app/lcov.info
-          -Dsonar.sources=src
-          -Dsonar.test.exclusions=**/node_modules/**
-          -Dsonar.test.inclusions=**/*.spec.ts
-          -Dsonar.tests=src
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
