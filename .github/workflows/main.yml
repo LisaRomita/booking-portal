@@ -30,6 +30,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - name: fix code coverage paths
+	      working-directory: ./coverage/my-app
+	      run: |
+	        sed -i 's/\/home\/runner\/work\/booking-portal\/booking-portal\//\/github\/workspace\//g' lcov.info
+	        sed -i 's/\/home\/runner\/work\/booking-portal\/booking-portal\//\/github\/workspace\//g' test-report.xml
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
