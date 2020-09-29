@@ -27,6 +27,7 @@ jobs:
           npm run build
 
   sonarcloud:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -37,6 +38,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   jest:
+    needs: build
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -58,6 +60,7 @@ jobs:
         uses: codecov/codecov-action@v1
 
   cypress:
+    needs: build
     runs-on: ubuntu-latest
     strategy:
       matrix:
