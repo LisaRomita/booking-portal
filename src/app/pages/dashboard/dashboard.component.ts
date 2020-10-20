@@ -30,7 +30,7 @@ export class DashboardComponent implements OnInit {
       desc: "Living Hall"
     },
     {
-      src: "http://www.hotelgravinasanpietro.it/wp-content/uploads/2013/12/doppia_big.jpg",
+      src: "https://www.hotelcentrotrieste.it/assets/images/header/camere/doppia/2018_008.jpg",
       desc: "Stanza Doppia"
     },
     {
