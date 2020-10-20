@@ -8,7 +8,6 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/src/test.ts'],
   testResultsProcessor: 'jest-sonar-reporter',
   collectCoverage: true,
-  sourceMap:true,
   coverageReporters: ['html', 'text', 'json-summary', 'lcov', 'clover'],
   coverageDirectory: 'coverage/my-app',
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths || {}, {

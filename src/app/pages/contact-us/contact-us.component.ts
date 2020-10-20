@@ -12,8 +12,8 @@ import { MessageService } from 'src/app/pages/contact-us/services/message.servic
 })
 export class ContactUsComponent implements OnInit {
 
-  @Input() mail: string;
-  @Input() text: string;
+  @Input() mail: string="";
+  @Input() text: string="";
   messaggi: Message[] = [];
 
   counter: number = 0;
